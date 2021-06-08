@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart';
-import 'package:latlong/latlong.dart';
+import 'package:latlong2/latlong.dart';
 
 void main() => runApp(MyApp());
 
@@ -139,20 +139,20 @@ class _HomePageState extends State<HomePage> {
                 borderColor: Colors.blueAccent,
                 color: Colors.black12,
                 borderStrokeWidth: 3),
-            popupOptions: PopupOptions(
-                popupSnap: PopupSnap.markerTop,
-                popupController: _popupController,
-                popupBuilder: (_, marker) => Container(
-                      width: 200,
-                      height: 100,
-                      color: Colors.white,
-                      child: GestureDetector(
-                        onTap: () => debugPrint("Popup tap!"),
-                        child: Text(
-                          "Container popup for marker at ${marker.point}",
-                        ),
-                      ),
-                    )),
+            // popupOptions: PopupOptions(
+            //     popupSnap: PopupSnap.markerTop,
+            //     popupController: _popupController,
+            //     popupBuilder: (_, marker) => Container(
+            //           width: 200,
+            //           height: 100,
+            //           color: Colors.white,
+            //           child: GestureDetector(
+            //             onTap: () => debugPrint("Popup tap!"),
+            //             child: Text(
+            //               "Container popup for marker at ${marker.point}",
+            //             ),
+            //           ),
+            //         )),
             builder: (context, markers) {
               return FloatingActionButton(
                 child: Text(markers.length.toString()),

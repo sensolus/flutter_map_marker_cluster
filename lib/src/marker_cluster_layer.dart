@@ -11,7 +11,7 @@ import 'package:flutter_map_marker_cluster/src/marker_cluster_layer_options.dart
 import 'package:flutter_map_marker_cluster/src/node/marker_cluster_node.dart';
 import 'package:flutter_map_marker_cluster/src/node/marker_node.dart';
 import 'package:flutter_map_marker_popup/extension_api.dart';
-import 'package:latlong/latlong.dart';
+import 'package:latlong2/latlong.dart';
 
 class MarkerClusterLayer extends StatefulWidget {
   final MarkerClusterLayerOptions options;
@@ -367,10 +367,10 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
               _spiderfyCluster = null;
             }));
 
-        if (widget.options.popupOptions != null) {
-          widget.options.popupOptions.popupController
-              .hidePopupIfShowingFor(markersGettingClustered);
-        }
+        // if (widget.options.popupOptions != null) {
+        //   widget.options.popupOptions.popupController
+        //       .hidePopupIfShowingFor(markersGettingClustered);
+        // }
         if (widget.options.onMarkersClustered != null) {
           widget.options.onMarkersClustered(markersGettingClustered);
         }
@@ -386,10 +386,10 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
                 _spiderfyCluster = null;
               }));
 
-        if (widget.options.popupOptions != null) {
-          widget.options.popupOptions.popupController
-              .hidePopupIfShowingFor(markersGettingClustered);
-        }
+        // if (widget.options.popupOptions != null) {
+        //   widget.options.popupOptions.popupController
+        //       .hidePopupIfShowingFor(markersGettingClustered);
+        // }
         if (widget.options.onMarkersClustered != null) {
           widget.options.onMarkersClustered(markersGettingClustered);
         }
@@ -485,10 +485,10 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
           }
         });
 
-        if (widget.options.popupOptions != null) {
-          widget.options.popupOptions.popupController
-              .hidePopupIfShowingFor(markersGettingClustered);
-        }
+        // if (widget.options.popupOptions != null) {
+        //   widget.options.popupOptions.popupController
+        //       .hidePopupIfShowingFor(markersGettingClustered);
+        // }
         if (widget.options.onMarkersClustered != null) {
           widget.options.onMarkersClustered(markersGettingClustered);
         }
@@ -543,17 +543,17 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
       layers.addAll(_buildLayer(layer));
     });
 
-    final PopupOptions popupOptions = widget.options.popupOptions;
-    if (popupOptions != null) {
-      layers.add(
-        MarkerPopup(
-          mapState: widget.map,
-          popupController: popupOptions.popupController,
-          snap: popupOptions.popupSnap,
-          popupBuilder: popupOptions.popupBuilder,
-        ),
-      );
-    }
+    // final PopupOptions popupOptions = widget.options.popupOptions;
+    // if (popupOptions != null) {
+    //   layers.add(
+    //     SimplePopupContainer(
+    //       mapState: widget.map,
+    //       popupController: popupOptions.popupController,
+    //       snap: popupOptions.popupSnap,
+    //       popupBuilder: popupOptions.popupBuilder,
+    //     ),
+    //   );
+    // }
 
     return layers;
   }
@@ -667,9 +667,9 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
           _centerMarkerController.isAnimating ||
           _fitBoundController.isAnimating) return null;
 
-      if (widget.options.popupOptions != null) {
-        widget.options.popupOptions.popupController.togglePopup(marker.marker);
-      }
+      // if (widget.options.popupOptions != null) {
+      //   widget.options.popupOptions.popupController.togglePopup(marker.marker);
+      // }
 
       // This is handled as an optional callback rather than leaving the package
       // user to wrap their Marker child Widget in a GestureDetector as only one
